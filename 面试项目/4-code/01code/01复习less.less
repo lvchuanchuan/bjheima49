@@ -1,0 +1,108 @@
+// // less: 
+// //  1.0 注释
+// //      /**/：编译完成之后会生成到css原文件中
+// //        //：编译完成之后不会生成到css原文件中
+// // 2.0 变量：
+// //     关键字： @变量名:变量值
+// //      用法：
+// //          1）用在css样式中
+// //          2）用在变量名中
+// @szie: 12px;
+// a {
+//     font-size: @szie;
+// }
+// @name: wjs;
+// .@{name}_topNav {
+//     width: 100%;
+// }
+// .@{name}_topNav ul {
+//     width: 100%;
+// }
+// .@{name}_topNav ul li{
+//     width: 100%;
+// }
+// // 3.0 混入
+// //     1)样式混入
+// //     2)函数混入
+// .b-right {
+// 	border-right: 1px solid #ccc;
+// }
+// .mt50 {
+// 	margin-top: 50px;
+// }
+// // 样式混入
+// .myMixin {
+//   .b-right();
+//   .mt50();
+// }
+// // 函数混入
+// .b-right() {
+//     border-right: 1px solid #ccc;
+// }
+// .mt50() {
+//     margin-top: 50px;
+// }
+// // 函数混入
+// .myMixin {
+//     .b-right();
+//     .mt50();
+// }
+// .br {
+//     border-right: 1px solid #ccc
+// }
+// .bl {
+//     border-left: 1px solid #ccc
+// }
+// .bb {
+//     border-bottom: 1px solid #ccc
+// }
+// // 以混入的方法进行简化：
+// .b(@dir:left) {
+//     border-@{dir}: 1px solid #ccc;
+// }
+// .myStyle {
+//     .b();
+//     .b(right);
+//     .b(bottom);
+// }
+// // 4.0 嵌套
+// ul {
+//     width: 100%;
+// }
+// ul li {
+//     width: 100%;
+// }
+// ul li a {
+//     width: 100%;
+// }
+// ul {
+//     width: 100%;
+//     li {
+//         width: 100%;
+//         a {
+//             width: 100%;
+//             &:hover {
+//                 background-color: red;
+//             }
+//         }
+//     }
+// }
+
+// 导入：
+//  关键字：@import，将其它的less文件引入到当前less文件中，引入完成之后，可以在当前文件中使用其它中的属性和混入函数
+
+// 计算&系统函数
+//  计算：所有数值相关的css样式都是可以计算的
+// @len: 10;
+// .myStyle {
+//     color: red - green;
+//     width: 100%*@len;
+// }
+//  系统函数：
+//     image-size('./0.jpg');
+//     image-width
+//     image-size
+//     image-uri()
+
+
+

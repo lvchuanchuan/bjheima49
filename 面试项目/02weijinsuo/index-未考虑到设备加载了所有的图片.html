@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>栅格系统的响应式布局</title>
+  <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <!--[if lt IE 9]>
+    <script src="./libs/html5shiv-master/dist/html5shiv.min.js"></script>
+    <script src="./libs/Respond-master/dest/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <!-- 顶部区域：topBar -->
+  <div class="wjs_topBar hidden-xs hidden-sm">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-2">
+          <span class="myIcon myIcon_phone"></span>
+          <span>手机微金所</span>
+          <span class="glyphicon glyphicon-menu-down"></span>
+        </div>
+        <div class="col-md-5">
+          <span class="myIcon myIcon_callIn"></span>
+          <span>4006-89-4006（服务时间：9:00-21:00）</span>
+        </div>
+        <div class="col-md-2">
+          <a href="#">常见问题</a>
+          <a href="#">财富登录</a>
+        </div>
+        <div class="col-md-3">
+          <input type="button" class="btn btn-danger btn_register" value="免费注册">
+          <input type="button" class="btn btn-link btn_login" value="登录">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 导航部分：nav -->
+  <nav class="navbar navbar-default wjs_nav">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+        <a class="navbar-brand" href="#">
+          <span class="myIcon myIcon_logo"></span>
+          <span class="myIcon myIcon_word"></span>
+        </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">我要投资</a></li>
+          <li><a href="#">我要投资</a></li>
+          <li><a href="#">我要投资</a></li>
+          <li><a href="#">我要投资</a></li>
+          <li><a href="#">我要投资</a></li>
+          <li><a href="#">微平台</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right hidden-sm">
+          <li><a href="#">个人中心</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <!-- banner区域：banner -->
+  <!-- 
+    轮播图在 lg,md,sm
+      高度不变，宽度自适应
+    轮播图在 xs
+      宽度改变，高度也改变
+   -->
+  <div class="wjs_banner">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <!-- 
+                指示器： 
+                 carousel-indicators：指示器的集合
+                 data-target：指示这个指示器将来是用来操作哪个轮播图
+                 data-slide-to：指示切换到哪一个图片上
+              -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      </ol>
+      <!-- 
+                轮播图片 
+                carousel-inner：轮播图容器
+                role：用来给盲人设备看的
+                item：轮播项
+                carousel-caption：轮播图的说明信息
+              -->
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <a class="pc_img hidden-xs" href="#" style="background-image:url('./images/slide_01_2000x410.jpg')"></a>
+          <a class="m_img hidden-sm hidden-md hidden-lg" href="#">
+            <img src="./images/slide_01_640x340.jpg" alt="">
+          </a>
+        </div>
+        <div class="item">
+          <a class="pc_img hidden-xs" href="#" style="background-image:url('./images/slide_02_2000x410.jpg')"></a>
+          <a class="m_img hidden-sm hidden-md hidden-lg" href="#">
+            <img src="./images/slide_02_640x340.jpg" alt="">
+          </a>
+        </div>
+        <div class="item">
+          <a class="pc_img hidden-xs" href="#" style="background-image:url('./images/slide_03_2000x410.jpg')"></a>
+          <a class="m_img hidden-sm hidden-md hidden-lg" href="#">
+            <img src="./images/slide_03_640x340.jpg" alt="">
+          </a>
+        </div>
+        <div class="item">
+          <a class="pc_img hidden-xs" href="#" style="background-image:url('./images/slide_04_2000x410.jpg')"></a>
+          <a class="m_img hidden-sm hidden-md hidden-lg" href="#">
+            <img src="./images/slide_04_640x340.jpg" alt="">
+          </a>
+        </div>
+      </div>
+      <!-- 
+                控制器： 
+                  carousel-control：轮播图控制器
+                  data-slide：当前轮播图控制器的作用
+              -->
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+    </div>
+  </div>
+  <!-- 支付部分 pay -->
+  <div class="wjs_pay"></div>
+  <!-- 信息部分 info -->
+  <div class="wjs_info"></div>
+  <!-- 产品部分：pro -->
+  <div class="wjs_pro"></div>
+  <!-- 新闻部分 news -->
+  <div class="wjs_news"></div>
+  <!-- 底部合作伙伴: part -->
+  <footer class="wjs_part"></footer>
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./libs/bootstrap/js/bootstrap.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

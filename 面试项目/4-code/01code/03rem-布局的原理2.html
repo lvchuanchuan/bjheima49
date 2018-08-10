@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .head {
+            width: 100%;
+            height: 50px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+            background-color: green;
+        }
+        @media screen and (max-width:640px) {
+            /* 在640像素下面设置rem 2px */
+            .head {
+                height: 50px;
+                font-size: 24px;
+                line-height: 50px;
+            }
+            /* 
+                .head {
+                    height: 1rem;
+                    font-szie: 1rem;
+                    line-height: 1rem;
+                }
+                640px
+            */
+            /* 这里面的1个rem应该对就下面的2个rem; */
+            /* 2 / 640 = n / 320 */
+        }
+        @media screen and (max-width: 320px) {
+            /* 在320像素设置rem为 1*/
+            .head {
+                height: 25px;
+                font-size: 12px;
+                line-height: 25px;
+            }
+            /* 
+                .head {
+                    height: 1rem;
+                    font-szie: 1rem;
+                    line-height: 1rem;
+                }
+                320
+            */
+        }
+        /* 
+            想法：
+                1）将来可不可以将所有的数据相关的属性（在不同的设备上）我都设置为相同值：
+                2）因为比例的关系是无法设置的，我再定义一个新的单位: 取名叫做rem将来所有的值都以rem为单位
+            总结:
+                1）如果有了rem将来在设置样式时就不需要再单独计算属性了，可以直接使用rem来设置
+                2）唯一的问题是将来需要将rem计算出来。
+                    要计算rem可以通过两种方式来进行计算
+                        媒体查询
+                        js
+                
+        */
+    </style>
+</head>
+<body>
+    <!-- 网站需要适配不同设备，除了宽度要适配以及，高度也需要？ -->
+    <div class="head">购物车</div>
+</body>
+</html>

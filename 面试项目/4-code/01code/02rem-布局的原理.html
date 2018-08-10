@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .head {
+            width: 100%;
+            height: 50px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+            background-color: green;
+        }
+        /* 
+            媒体查询： 
+                适配：能够在不同宽度的设备上显示网站。
+                    设备像素：750px,720px,640px,540px,480px,424px,414px,400px,384px,375px,360px,320px
+                选择三个设备来进行适配：
+                    640px、540px、320px
+        */
+        @media screen and (max-width:640px) {
+            /* 当设备的宽度为640时，div的高度为50px   宽度：标准设备宽度 标准容器高度*/
+            .head {
+                height: 50px;
+                font-size: 24px;
+                line-height: 50px;
+            }
+        }
+        @media screen and (max-width: 540px) {
+            /* 当前设备宽度：540px，那么div高度为： */
+            /* 
+                缩放的比例：
+                当前容器高度 / 当前设备宽度 = 标准容器高度 / 标准设备宽度;
+                当前容器高度 = 标准容器高度 / 标准设备宽度 * 当前设备宽度;
+                    value = 50px / 640px * 540px
+                    size = 24px / 640px * 540px;
+            */
+            .head {
+                height: 42.1875px;
+                font-size: 20.25px;
+                line-height: 42.1875px;
+            }
+        }
+        @media screen and (max-width: 320px) {
+            /* 现在设备宽度为：320px，如果要页面进行等比例缩放，那么高度应该为25px */
+            .head {
+                height: 25px;
+                font-size: 12px;
+                line-height: 25px;
+            }
+        }
+        /* 
+            想法：
+                1）将来可不可以将所有的数据相关的属性（在不同的设备上）我都设置为相同值：
+                2）因为比例的关系是无法设置的，我再定义一个新的单位:取名叫做rem将来所有的值都以rem为单位
+                
+                
+        */
+    </style>
+</head>
+<body>
+    <!-- 网站需要适配不同设备，除了宽度要适配以及，高度也需要？ -->
+    <div class="head">购物车</div>
+</body>
+</html>
